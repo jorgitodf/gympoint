@@ -1,0 +1,8 @@
+CREATE USER 'user_gympoint'@'localhost' IDENTIFIED BY '!Gympoint@2019';
+CREATE USER 'user_gympoint'@'%' IDENTIFIED BY '!Gympoint@2019';
+
+GRANT ALL ON `gympoint`.* TO 'user_gympoint'@'%' ;
+GRANT ALL ON `gympoint`.* TO 'user_gympoint'@'localhost';
+FLUSH PRIVILEGES;
+
+CREATE SCHEMA `gympoint` DEFAULT CHARACTER SET utf8 ;
