@@ -6,3 +6,8 @@ GRANT ALL ON `gympoint`.* TO 'user_gympoint'@'localhost';
 FLUSH PRIVILEGES;
 
 CREATE SCHEMA `gympoint` DEFAULT CHARACTER SET utf8 ;
+
+
+
+https://sequelize.org/master/identifiers.html
+
