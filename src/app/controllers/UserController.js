@@ -22,6 +22,17 @@ class UserController {
 
         return res.json({ id, name, email, created_at });
     }
+
+    async update(req, res) {
+        if (req.name !== 'Administrador') {
+            return res.status(401).json({
+                error: 'Você não possui Permissão para realizar essa Ação!',
+            });
+        }
+        return res.json({
+            ok: true,
+        });
+    }
 }
 
 export default new UserController();

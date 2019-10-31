@@ -11,3 +11,5 @@ CREATE SCHEMA `gympoint` DEFAULT CHARACTER SET utf8 ;
 
 https://sequelize.org/master/identifiers.html
 
+netstat -a -n -o | findstr :3333
+taskkill /PID 5972 /F
