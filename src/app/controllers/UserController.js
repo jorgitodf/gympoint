@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 import User from '../models/User';
 
 class UserController {
@@ -14,7 +16,11 @@ class UserController {
 
         const { id, name, email, createdAt } = await User.create(req.body);
 
-        return res.json({ id, name, email, createdAt });
+        const created_at = format(createdAt, 'yyyy-MM-dd HH:mm:ss', {
+            locale: pt,
+        });
+
+        return res.json({ id, name, email, created_at });
     }
 }
 
