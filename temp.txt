@@ -1,0 +1,27 @@
+        const matriculations = await Matriculation.findOne({
+            /* where: { student_id: req.params.id }, */
+            include: [
+                {
+                    model: Student,
+                    where: { id: req.params.id },
+                    as: 'student',
+                    attributes: ['name'],
+                    required: false,
+                    right: true,
+                },
+            ],
+        });
+
+        const end_date = addMonths(
+            zonedTimeToUtc(parseISO(req.body.start_date), 'America/Sao_Paulo'),
+            plan.duration
+        );
+
+
+        const n_start_date = format(
+            parseISO(req.body.start_date),
+            'yyyy-MM-dd HH:mm:ss',
+            {
+                locale: pt,
+            }
+        );
